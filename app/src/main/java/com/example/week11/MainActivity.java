@@ -19,23 +19,19 @@ public class MainActivity extends AppCompatActivity {
         TeamAdapter adapter = new TeamAdapter(teams);
         recyclerView.setAdapter(adapter);
 
-        // 2. Add teams (provide ALL 3 parameters)
-        teamRepo.add(new Team("FC Barcelona", "Spain", "La Liga"));  // ✅ Correct
-        teamRepo.add(new Team("PSG", "France", "Ligue 1"));          // ✅ Correct
+        teamRepo.add(new Team("FC Barcelona", "Spain", "La Liga"));
+        teamRepo.add(new Team("PSG", "France", "Ligue 1"));
 
-        // 3. Filter teams (e.g., get Spanish teams)
         List<Team> spanishTeams = teamRepo.filter(team -> team.getCountry().equals("Spain"));
 
-        // 4. Print results (for testing)
         for (Team team : spanishTeams) {
-            team.displayDetails();  // Output: "FC Barcelona (Spain) - La Liga"
-        }
+            team.displayDetails();
 
         Repository<Player> playerRepo = new Repository<>();
         playerRepo.addAll(DataProvider.getSamplePlayers());
         List<Player> forwards = playerRepo.filter(p -> p.getPosition().equals("Forward"));
         for (Player p : forwards) {
-            p.displayDetails(); // Prints: "Lionel Messi (Forward) - FC Barcelona"
+            p.displayDetails();
         }
     }
 }

@@ -13,7 +13,6 @@ public class DataProvider {
 
     public static List<Player> getSamplePlayers() {
         List<Player> players = new ArrayList<>();
-        // Now only 3 parameters (name, position, team)
         players.add(new Player("Lionel Messi", "Forward", "FC Barcelona"));
         players.add(new Player("Kylian Mbappé", "Forward", "PSG"));
         return players;
