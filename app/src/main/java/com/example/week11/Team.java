@@ -1,6 +1,6 @@
 package com.example.week11;
 
-public class Team extends SoccerEntity {
+public class Team implements SoccerEntity {
     private String name;
     private String country;
     private String league;
@@ -16,5 +16,15 @@ public class Team extends SoccerEntity {
         return name;
     }
 
+    public String getCountry() {
+        return country;
+    }
+    public String getLeague() {
+        return league;
+    }
 
+    @Override
+    public void displayDetails() {
+        System.out.println("Team: " + name + " (" + country + ") - League: " + league);
+    }
 }
